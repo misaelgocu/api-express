@@ -2,3 +2,5 @@ pnpm install express --save
 
 pnpm install dotenv
 
+pnpm install body-parser
+
