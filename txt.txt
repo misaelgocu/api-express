@@ -4,3 +4,18 @@ pnpm install dotenv
 
 pnpm install body-parser
 
+pnpm i prisma --save-dev
+
+pnpm i @prisma/client
+
+pnpm i pg
+
+npx prisma init
+
+npx prisma generate
+
+npx prisma db pull
+
+npx prisma migrate dev --name init_medical_system
+
+npx prisma generate
