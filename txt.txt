@@ -19,3 +19,11 @@ npx prisma db pull
 npx prisma migrate dev --name init_medical_system
 
 npx prisma generate
+
+node prisma/seed.js
+
+pnpm i jsonwebtoken
+
+pnpm i bcryptjs
+
+pnpm i cors
