@@ -186,6 +186,18 @@ app.post('/register', async(req, res) =>{
   res.status(201).json({message: 'Usuario creado exitosamente', user: newUser});
 });
 
+app.post('/login', async(req, res) => {
+  const { email, password } = req.body;
+  const user = await prisma.user.findUnique({ where: { email } });
+
+  if (!user || !(await bcrypt.compare(password, user.password))) {
+    return res.status(401).json({ error: 'Credenciales inválidas' });
+  }
+
+  const token = jwt.sign({ userId: user.id, role: user.role }, process.env.JWT_SECRET, { expiresIn: '1h' });
+  res.json({ token });
+});
+
 app.listen(PORT, () => {
   console.log(`Servidor: http://localhost:${PORT}`);
 });
