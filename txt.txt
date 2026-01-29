@@ -24,6 +24,6 @@ node prisma/seed.js
 
 pnpm i jsonwebtoken
 
-pnpm i bcryptjs
+pnpm i bcrypt
 
 pnpm i cors

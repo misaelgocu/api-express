@@ -1,0 +1,9 @@
+
+GET http://localhost:3000/register
+content-type: application/json
+
+{
+    "email": "sample@gmail.com",
+    "password": "sample",
+    "name": "sample",
+}
